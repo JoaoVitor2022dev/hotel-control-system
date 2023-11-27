@@ -1,3 +1,6 @@
+using System;
+using System.Globalization;
+
 namespace Program.Entities
 {
     class Reservation
@@ -17,6 +20,11 @@ namespace Program.Entities
         {
             TimeSpan durantion = CheckOut.Subtract(CheckIn);
             return (int)durantion.TotalDays;
+        }
+        public void UpdateDates(DateTime checkin, DateTime checkout)
+        {
+           CheckIn = checkin; 
+           CheckOut = checkout;
         }
         public override string ToString()
         {
